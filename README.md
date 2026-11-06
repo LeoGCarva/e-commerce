@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simple Shop
 
-## Getting Started
+A study project for learning Next.js by building a small online store. It lists products from the [Fake Store API](https://fakestoreapi.com) and shares them across the app with the React Context API. This repository is named `e-commerce`; Simple Shop is the name shown in the app.
 
-First, run the development server:
+## Project status
+
+The project is in progress.
+
+**Done:**
+
+- Product grid with images, titles, and prices
+- Loading and error messages while fetching products
+- A quantity selector on each product card
+- Navigation between the home and cart pages
+
+**Still to do:**
+
+- Make the "Add to Cart" button work
+- Build the cart page, which is still a placeholder
+- Update the cart counter in the navigation bar, which always shows 0
+
+## Tech stack
+
+- Next.js 16 (App Router) and React 19
+- TypeScript
+- Tailwind CSS v4
+- Axios
+
+## Getting started
+
+You need Node.js and npm. The app doesn't need any environment variables, but it does need internet access to load the products.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the development server |
+| `npm run build` | Create a production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | Run ESLint |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+app/
+  cart/         Cart page
+  components/   Navbar and ProductCard
+  context/      Product data fetching and shared state
+  types/        TypeScript types
+  layout.tsx    Root layout and context provider
+  page.tsx      Product listing
+```
